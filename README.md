@@ -1,5 +1,5 @@
-# aparecida_nutricao_alura
-Esse é o primeiro projeto que eu fiz em JS, iniciado no dia 09/11
+# estudos_js
+Estudos em JS, com anotações e testes no código.
 
 O QUE É DOM? 
 -DOM ou Document Object Model
