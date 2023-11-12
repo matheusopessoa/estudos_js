@@ -6,3 +6,5 @@ console.log(user_name)
 
 var confirmacao = window.confirm("Confirma")
 console.log(confirmacao)
+
+console.log(10 === 1)

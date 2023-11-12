@@ -1,11 +1,11 @@
 
-O QUE É DOM? 
+*O QUE É DOM?* 
 -DOM ou Document Object Model
 -Representacao do HTML no JS; Para isso, é só colocar no body do HTML um 
 *console.log(document)*
 , ele poderá ser visualizado no console (dentro do inspecionar)
 
-O QUE É DOCUMENT? 
+*O QUE É DOCUMENT?* 
 -Ela é a representação do DOM ou Document Object Model, que é a representação da nossa página HTML para o navegador, que é utilizada pelo Javascript para manipular a página.
 
 COMO MARCAR UM ELEMENTO DO HTML UTILIZANDO O JS
@@ -36,7 +36,7 @@ h1 mencionada anteriormente, o codigo refeito fica assim:
 tag script no fim do HTML e colocaremos dentro dela um src="" com o endereço do nosso arquivo js
 *<*script* scr="js/main.js"><*/script>* (ignore os *)
 
--VAR LET E CONST
+*-VAR LET E CONST*
 var serve pra CRIAR uma variavel igual as do python
 
 const cria uma variavel que nao podera ser modificada
@@ -44,11 +44,11 @@ const cria uma variavel que nao podera ser modificada
 let cria uma variavel que pode ser modificada porem ela so funciona naquele bloco,
 por isso, é mais usada em loops, por exemplo
 
--ARITIMETICA
+*-ARITIMETICA*
 em python tem -= +=, em js tambem, mas alem disso tb tem *=, %= e /=
 % funciona da msm forma
 
--Incrementar e Decrementar
+*-Incrementar e Decrementar*
 ++ e -- 
 ++ soma 1 e -- subtrai 1
 
@@ -57,12 +57,12 @@ numero-- = 9
 numero++ = 10
 numero++ = 11
 
--Concatenacao
+*-Concatenacao*
 igual python
 "Isaac" + "Pontes" = "Isaac Pontes"
 "2" + 2 = "22" (transforma o int em string pq js é dinamico e fraco, em python daria erro)
 
--Comentarios
+*-Comentarios*
 uma linha é // (cntrl + c + k)
 varias linhas é /* */ 
 
@@ -77,4 +77,73 @@ console.log(confirmacao) - retornará true ou false
 uma forma de dar INPUT em JS é assim:
 var nome = window.prompt("Insira seu nome")
 
+*-Comparação de dados*
+=== compara tipagem e valor, == compara apenas o valor (pode dar errado), ex:
+10 == "10" -> True
+=== é mais restrito, é o que mais utilizaremos
 
+!== e !=== existem
+
+maior que, menor que... = python
+
+*-Operadores Lógicos* 
+AND, OR, NOT
+
+AND: && -> p=T, q=T:     q && q == True
+OR: || (shift + botao do lado do shift) -> p=T, q=F:     q || q == True
+NOT: ! -> p=T, q=F:     !p == False ; !q == True
+
+*-Estruturas Condicionais*
+if / else if (elif) / else
+
+sintaxe:
+
+if (condicao) {
+    ...
+} else if (condicao) {
+    ...
+} else if (condicao) {   *podem ter infinitos 'else if' desse jeito*
+    ...
+} else {
+    ...
+}
+
+*-Operador Ternario*
+const (nome da variavel) = (condição) *?* (o que fazer se for (if)) : (o que fazer se nao for (else))  
+-> o *?* é o que torna a variavel um ternario
+
+ex: 
+const resultado = (idade >= 18) ? "Você é maior de idade" : "Você é menor de idade"
+
+isso equivale a:
+
+if (idade >= 18) {
+    const resultado = "Maior de idade"
+} else {
+    const resultado = "Menor de idade"
+}
+
+perceba, uma teve UMA LINHA, já o outro, 5
+
+*SWITCH* essa é braba
+o switch serve pra tu nao ter que meter um monte de if, else if em alguns casos
+por exemplo:
+
+const resultado = prompt("Escolha \na. \nb. \nc.")
+
+switch (resultado) {
+    case a:
+    o que fazer se for a
+    case b:
+    o que fazer se for b
+    break
+    case c:
+    o que fazer se for c
+    default:
+    o que fazer por padrao
+}
+
+-se bater no caso b, por exemplo, ele vai rodar tb o C e o default, para quebrar isso, adiciona-se
+um break na linha dps do que acontece se for x; nesse caso, nem o default roda
+-o default roda se nao bater em nenhum resultado
+-
