@@ -146,4 +146,55 @@ switch (resultado) {
 -se bater no caso b, por exemplo, ele vai rodar tb o C e o default, para quebrar isso, adiciona-se
 um break na linha dps do que acontece se for x; nesse caso, nem o default roda
 -o default roda se nao bater em nenhum resultado
--
+
+
+*-ESTRUTURAS DE REPETIÇÃO*
+Todos aceitam o break, mas nao é clean code, so usar quando for mega importante!
+
+
+
+*-WHILE*
+while (condicao) {
+
+}
+
+*-DO WHILE*
+É um while, mas antes de conferir pela primeira vez a condicao, ele roda o codigo
+
+do {
+ ... o que fazer no DO WHILE
+} while (condicao)
+
+*-FOR*
+Inicialização: expressao executada antes de tudo
+Condicao;
+Finalizacao: executada apos o bloco for
+
+PARA: INICIALIZAÇÃO ; CONDICAO ; FINALIZACAO FAÇA ALGUMA COISA
+
+SINTAXE: 
+for (inicializacao ; condicao ; finalizacao) {
+    //.. o que vai ser repetido de fato
+}
+
+Um uso comum é quando queremos iterar um numero fixo de vezes, por exemplo, uma vez
+para cada item numa lista, uma vez para cada simbolo numa string...
+
+por exemplo: 
+isso abaixo significa: o indice é 0, enquanto ele for menor ou igual a 10, acresça uma unidade
+for (let indice = 0; indice <= 10; indice++) {
+    alert("Indice atual: " + indice)
+}
+
+Vai alertar: "Indice atual: 0" -> "Indice atual: 1"  ... -> "Indice atual: 10" 
+
+-> o inicializando e finalizando sao opcionais, ou seja, poderia ser:
+
+let indice = 0
+
+for (; indice < 10; ) {
+    indice++
+    alert("Indice atual: " + indice)
+} 
+
+-> perceba que tem q manter os ";" pra demarcar a posicao e o que cada estrutura é

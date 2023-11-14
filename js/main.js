@@ -1,10 +1,6 @@
-const nome = "Matheus"
+let indice = 0
 
-console.log(document.querySelector(".container"))
-let user_name = window.prompt("Insira o seu nome")
-console.log(user_name)
-
-var confirmacao = window.confirm("Confirma")
-console.log(confirmacao)
-
-console.log(10 === 1)
+for (; indice < 10; ) {
+    indice++
+    alert("Indice atual: " + indice)
+}
