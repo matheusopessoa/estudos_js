@@ -198,3 +198,127 @@ for (; indice < 10; ) {
 } 
 
 -> perceba que tem q manter os ";" pra demarcar a posicao e o que cada estrutura é
+
+
+LinkedList: colecao ordenada de valores onde cada elemento está ligado à outro.
+Fila: First in First Out 
+Pilha: Last in First Out
+
+Estruturas de dados seguem referencias
+let array = [1,2,3,4]
+let array2 = array
+
+array2[0] = 5
+
+array2 => [5,2,3,4]
+array => [5,2,3,4]
+
+eu so mudei o array2, mas ele usa como referencia o array, isso fez com que array também mudasse.
+
+unshift: adiciona no final da lista
+
+push: adiciona no comeco da lista
+
+Ex: Como mandar itens de um array pra outra com a ordem inversa de duas formas: 
+
+*1º USANDO PUSH*
+for (let i = array.length - 1; i >= 0; i--) {
+    let ultimoElementoDois = arrayDois.length - 1
+
+    arrayDois.push(array.pop(array[i]));
+}
+
+*2º USANDO UNSHIFT*
+const elementosArray = array.lenght
+for (let i = 0; i <= elementosArray; i++) {
+    arrayDois.unshift(array.pop())
+    console.log(i)
+}
+
+Assim como unshift e push funcionam adicionando no final e no comeco da lista, temos
+como remover no final e no comeco da lista
+
+Acima, utilizei o metodo .pop(), ele é responsavel por remover do fim de uma lista e pôr
+o elemento removido numa pilha (sim, a estrutura de dados pilha que funciona da forma Last in first out)
+
+A forma de remover no começo do array é *shift*
+
+Resumo:
+Unshift: Remove no começo da lista
+Shift: Adiciona no comeco da lista
+
+Pop: Remove no fim da lista
+Push: Adiciona no fim da lista
+
+
+-Inlcudes(): Booleano, serve pra conferir se algum elemento está numa lista
+const inclui = array.includes("Naruto");
+vai retornar true ou false
+
+-indexOf(): Alem de saber se está incluso, descobrimos também o indice de um
+elemento
+const indice = array.indexOf("Naruto");
+vai retornar o indice
+
+-Slice(): Cria uma variavel com a copia de um array e salva num novo array
+const novoArray = array.slice(start: end) OBS: O FINAL NAO ENTRA NO NOVO ARRAY ; Se nao especificar o final, o start nao entra no novoArray
+
+Obs 2: Também podemos fazer slice com strings -> 
+const name = "Naruto"
+const newName = name.slice(0:4)
+
+newName vai ser "Nar"
+
+-Como CONCATENAR arrays
+(serve pra juntar duas arrays)
+imagine q tem a array
+uchihasJovens e uchihaIdosos
+
+para criar a array uchihasAll, podemos fazer assim
+uchihasAll = uchihasJovens.concat(uchihasIdosos)
+
+-Splice(): O splice TROCA um elemento de um array
+imagine o array: frutas = ["banana", "maçã", "arroz", "uvas"]
+perceba que há um ERRO no elemento de indice 2 ("arroz")
+
+vamos corrigir com o splice
+
+var elementosRemovidos = frutas.splice(2, 1, "Laranja", "abacaxi", "jaboticaba")
+2 = indice do elemento a ser removido
+1 = quantidade de elementos a serem removidos
+tudo depois do 1 são elementos a serem adicionados do indice 2 em diante
+
+frutas = ['banana', 'maçã', 'Laranja', 'abacaxi', 'jaboticaba', 'uvas']
+elementosRemovidos = ['arroz']
+
+-Iterar sobre todos elementos de uma lista
+
+for (let indice = 0; indice == array.lenght; indice++) {
+    console.log("O elemento " + array[indice] + " está no índice " + índice)
+}
+
+*-Arrays Bidimensionais (matrizes)* ->Array com arrays dentro
+Arrays dentro de arrays
+
+Arrays podem receber qualquer tipo da dado, inclusive outros arrays
+const arr = [
+    ["l1, c1", "l1, c2", "l1, c3"],
+    ["l2, c1", "l2, c2", "l2, c3"],
+    ["l3, c1", "l3, c2", "l3, c3"],
+    ["l4, c1", "l4, c2", "l4, c3"]
+]
+
+console.table(arr)   -> O console vai printar uma tabela
+
+*-Objeto*
+É uma estrutura de js para trabalhar com Dicionarios chave-valor
+A chave é o nome da propriedade e o valor é o que está armazenado na chave
+Não possui sequencia/ordem
+Uma propriedade pode armazenar qualquer tipo de dado como valor
+
+Os objetos podem ser criados com chaves
+let objeto = {}
+Suas propriedades e funcoes sao chamadas com . ou []
+
+Tem um print de como os objetos funcionam na pasta img
+
