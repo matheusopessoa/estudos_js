@@ -322,3 +322,78 @@ Suas propriedades e funcoes sao chamadas com . ou []
 
 Tem um print de como os objetos funcionam na pasta img
 
+
+Funções
+sintaxe: 
+function nomeDaFuncao(parametros) {
+    //procedimentos
+    return saida
+}
+
+
+Valor padrão para os parâmetros
+// podemos declarar um valor padrão para um parãmetro, assim, 
+// se ele não for informado, o valor padrão será usado no lugar do undefined
+function dizerOla(nome = "mundo") {
+  console.log("Olá, " + nome + "!")
+}
+dizerOla("Isaac")
+dizerOla()
+
+É possível ter vários parâmetros
+// Uma função pode ter quantos parâmetros quisermos, basta separaá-los por vírgula
+function soma(a, b) {
+  console.log(a + b)
+}
+soma(1, 1)
+soma(34, 5)
+
+A ordem dos parâmetros é importante
+// Ao usar vários parâmetros, é recomendado deixar aqueles com valor padrão por último
+function criarUsuario(nome, email, senha, tipo = "leitor") {
+  const usuario = {nome, email, senha, tipo}
+  console.log(usuario)
+}
+
+function novoUsuario(nome, tipo = "leitor", email, senha) {
+  const usuario = { nome, email, senha, tipo }
+  console.log(usuario)
+}
+
+criarUsuario("Isaac", "isaac@email.com", "1234")
+novoUsuario("Isaac", "isaac@email.com", "1234")
+
+Funções com muitos parâmetros
+// Ao criarmos uma função com muitos parâmetros,
+// uma boa prática é substituí-los por um objeto
+function parametrosDoJeitoErrado(nome, telefone, endereco, aniversario, email, senha) {
+  // ...
+}
+
+function parametrosDoJeitoCerto(usuario) {
+  // ...
+}
+
+// Além de facilitar na chamada da função, a ordem dos parâmetros se torna irrelevante   
+parametrosDoJeitoErrado("nome", "telefone", "endereco", "aniversario", "email", "senha")
+const dadosDoUsuario = {
+  nome: "",
+  telefone: "",
+  email: "",
+  senha: "",
+  aniversario: "",
+  endereco: ""
+}
+parametrosDoJeitoCerto(dadosDoUsuario)
+
+Vantagens:
+Legibilidade: O código se torna mais legível, pois é fácil entender quais dados estão sendo passados para a função.
+
+Manutenção: Adicionar ou remover parâmetros torna-se mais fácil, pois você só precisa modificar a estrutura do objeto, não a assinatura da função.
+
+Evita Erros de Ordem: Elimina a possibilidade de erros causados pela ordem incorreta dos parâmetros na chamada da função.
+
+Facilita a Documentação: Ao utilizar um objeto, é mais fácil documentar a função, indicando claramente quais propriedades são esperadas.
+
+
+
