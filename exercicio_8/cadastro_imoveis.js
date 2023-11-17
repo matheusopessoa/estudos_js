@@ -1,27 +1,46 @@
-var imoveisCadastrados = {}
-let sairMenu = false
-var qtdImoveisCad = 0
+const cadastrados = []
+let menu = ""
 
-while (!sairMenu) {
-    let menu = prompt("Imóveis Cadastrados: " + qtdImoveisCad + "\nO que você deseja?\n" + 
-    "1. Cadastrar Imóvel\n" + "2. Ver imóveis cadastrados\n" + "3. Sair")
-    switch (menu) {
-        case "1": 
-        qtdImoveisCad++
-        let nomeProprietario = prompt("Qual é o nome do proprietario?")
-        let qtdQuartos = prompt("Quantos quartos tem o imóvel?")
-        let qtdBanheiros = prompt("Quantos banheiros tem o imóvel?")
-        let booleanGaragem = confirm("Tem garagem?")
-        let possuiGaragem;
-        if (booleanGaragem == true) {
-            let possuiGaragem = "Tem garagem"
-        } else {
-            let possuiGaragem = "Não tem garagem"
-        }
-        let varImovel = "imovel_" + String(qtdImoveisCad)
-        imoveisCadastrados.varImovel = [["Nome do Proprietário: " + nomeProprietario], 
-        ["Quartos: " + [qtdQuartos]], ["Banheiros: " + qtdBanheiros] + [possuiGaragem]] 
+do{
+    menu = prompt("1. ADD" + "\n2. MOSTRAR" + "\n3. SAIR")
+
+    switch(menu) {
+        case "1":
+            const imovel = {}
+
+                imovel.proprietario = prompt("Informe o nome do proprietário do imóvel:")
+                imovel.quartos = parseFloat(prompt("Quantos quartos possui o imóvel?"))
+                imovel.banheiros = parseFloat(prompt("Quantos banheiros possui o imóvel?"))
+                imovel.garagem = prompt("O imóvel possui garagem? (Sim/Não)")
+
+            const confirma = confirm(
+                "Salvar este imóvel?\n" +
+                "\nProprietário: " + imovel.proprietario +
+                "\nQuartos: " + imovel.quartos +
+                "\nBanheiros: " + imovel.banheiros +
+                "\nPossui Garagem? " + imovel.garagem)
+            
+            if (confirma) {
+                cadastrados.push(imovel)
+            } else alert("Não adicionando\nVoltando ao menu...")
+            break
+
+        case "2":
+            for (let i = 0; i < cadastrados.length; i++) {
+                alert(
+                  "Imóvel " + (i + 1) +
+                  "\nProprietário: " + cadastrados[i].proprietario +
+                  "\nQuartos: " + cadastrados[i].quartos +
+                  "\nBanheiros: " + cadastrados[i].banheiros +
+                  "\nPossui Garagem? " + cadastrados[i].garagem
+                )
+              }
+              break
         
-        alert("Imóve cadastrado: " + imoveisCadastrados[varImovel])
+        case "3":
+            alert("Você escolheu sair")    
+            break
+        default: 
+            alert("Resposta inválida")
     }
-}
+} while (menu !== "3")
