@@ -17,3 +17,19 @@ const personagensOrdenados = personagens.sort(function (a, b) {
 
 console.log(personagens)
 console.log(personagensOrdenados)
+
+const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+array.forEach(function(elemento, indice, array){
+  if (elemento%2 === 0) {
+    console.log('Array: ' + array + '\n'
+    + 'Elemento: ' + elemento + '\n'
+    + 'Indice: ' + indice)} 
+})
+
+const nomes = [
+  {nome: 'Matheus', idade: '20', curso: 'SI'},
+  {nome: 'André', idade: '24', curso: 'SI'},
+  {nome: 'Steve Jobs', idade: '18', curso: 'GTI'}
+]
+
