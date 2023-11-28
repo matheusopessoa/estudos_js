@@ -319,6 +319,41 @@ Uma propriedade pode armazenar qualquer tipo de dado como valor
 Os objetos podem ser criados com chaves
 let objeto = {}
 Suas propriedades e funcoes sao chamadas com . ou []
+Ponto (.):
+
+Normalmente usado para acessar propriedades e métodos diretamente associados ao objeto.
+É comumente utilizado quando você tem um nome de propriedade ou método específico em mente.
+
+var objeto = {
+    propriedade: 'valor',
+    metodo: function() {
+        console.log('Método chamado');
+    }
+};
+
+console.log(objeto.propriedade);  // Acessando propriedade usando ponto
+objeto.metodo();  // Chamando método usando ponto
+
+
+Colchetes ([]):
+
+Usado quando o nome da propriedade ou método é dinâmico, ou quando o nome contém caracteres que não são válidos para um identificador (como espaços, hífens, etc.).
+Permite o acesso a propriedades e métodos com base em uma expressão.
+
+var objeto = {
+    propriedade: 'valor',
+    metodo: function() {
+        console.log('Método chamado');
+    }
+};
+
+var nomePropriedade = 'propriedade';
+console.log(objeto[nomePropriedade]);  // Acessando propriedade usando colchetes
+
+var nomeMetodo = 'metodo';
+objeto[nomeMetodo]();  // Chamando método usando colchetes
+
+
 
 Tem um print de como os objetos funcionam na pasta img
 
@@ -395,5 +430,44 @@ Evita Erros de Ordem: Elimina a possibilidade de erros causados pela ordem incor
 
 Facilita a Documentação: Ao utilizar um objeto, é mais fácil documentar a função, indicando claramente quais propriedades são esperadas.
 
+*LAMBDA FUNCTIONS / FUNCOES ANONIMAS*
+Sao criadas sem serem nomeadas, servem pra nao mudar a variavel, e mesmo assim, conseguir iterar ou seja la
+o que ela deva fazer. Sao muito comuns na programacao funcional. 
+Link do video para revisao: https://www.youtube.com/watch?v=lEo4bN-2ysQ&ab_channel=C%C3%B3digoFonteTV
+
+Exemplo de uso:
+
+const nomes = ['Matheus Pessoa', 'Julio Andherson', 'Aleko Belo', 'Miguel Oliveira', 'Eric Felix'];
+
+nomes.map{
+    function (item){
+        return item.split(' ')[0]
+    }
+};
+
+Retornará os primeiros nomes de cada string; Perceba que a funcao nao foi NOMEADA.
+
+*HIGH ORDER FUNCTIONS*
+Função que tem outra função como parâmetro
+
+calcular(a, b, operacao) {
+    const resultado = operacao(a,b)
+    return resultado
+}
+
+somar(a, b){
+    console.log('Realizando soma...')
+    return a+b
+}
+
+calcular(3, 5, somar) => Somar é chamado sem ()
+
+MUITAS VEZES FUNCOES ANONIMAS SAO PARAMETROS DE HIGH ORDER FUNCTIONS
+
+calcular(10, 12, function(x, y){
+    console.log('Subtraindo...')
+    return x - y
+}
+)
 
 
