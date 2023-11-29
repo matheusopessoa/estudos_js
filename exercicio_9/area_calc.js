@@ -31,7 +31,9 @@ function calcCirculo() {
     let areaCirculo = (3.14 * raio * raio)
     return areaCirculo
 }
+
 let menu = ""
+
 do {
     menu = prompt("Que área vc deseja?\n1. Triangulo\n2. Retangulo\n3. Quadradon\n4. Trapezio\n5. Circulo\n6. Sair")
     switch (menu) {
